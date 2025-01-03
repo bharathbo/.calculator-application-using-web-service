@@ -1,0 +1,170 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<div class="header-bar fixed-top d-flex justify-content-between align-items-center">
+    <img src="~/pictures/logo.png" alt="Logo" class="logo-small" />
+    <ul class="navbar-nav flex-row ms-3">
+        <li class="nav-item">
+            <a class="nav-link" href="@Url.Action("Home", "Account")">Home</a>
+        </li>
+    </ul>
+</div>
+
+<br />
+<br />
+<br />
+<h2>Explore Your Ultimate Calculator App</h2>
+
+
+<div id="calculator">
+    <div class="display">
+        <input type="text" id="value1" class="input-display" readonly placeholder="0" />
+        <input type="text" id="value2" class="input-display" readonly placeholder="0" />
+    </div>
+    <div class="buttons">
+        <button class="btn num" onclick="appendNumber('1')">1</button>
+        <button class="btn num" onclick="appendNumber('2')">2</button>
+        <button class="btn num" onclick="appendNumber('3')">3</button>
+        <button class="btn op" onclick="setOperation('Add')">+</button>
+
+        <button class="btn num" onclick="appendNumber('4')">4</button>
+        <button class="btn num" onclick="appendNumber('5')">5</button>
+        <button class="btn num" onclick="appendNumber('6')">6</button>
+        <button class="btn op" onclick="setOperation('Subtract')">-</button>
+
+        <button class="btn num" onclick="appendNumber('7')">7</button>
+        <button class="btn num" onclick="appendNumber('8')">8</button>
+        <button class="btn num" onclick="appendNumber('9')">9</button>
+        <button class="btn op" onclick="setOperation('Multiply')">×</button>
+
+        <button class="btn clear" onclick="clearInputs()">C</button>
+        <button class="btn num" onclick="appendNumber('0')">0</button>
+        <button class="btn op" onclick="performOperation()">=</button>
+        <button class="btn op" onclick="setOperation('Divide')">÷</button>
+    </div>
+</div>
+<h4>Result: <span id="result"></span></h4>
+
+<div class="footer-bar fixed-bottom d-flex justify-content-center align-items-center bg-dark text-white">
+    <p>&copy; 2024 OSA Demo.</p>
+</div>
+
+<style>
+    #calculator {
+        max-width: 300px;
+        margin: 20px auto;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .display {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .input-display {
+        font-size: 1.5rem;
+        padding: 10px;
+        margin: 5px 0;
+        text-align: right;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn.op {
+            background-color: #808080;
+        }
+
+        .btn.clear {
+            background-color: #dc3545;
+        }
+
+    .header-bar, .footer-bar {
+        background-color: #000;
+        height: 60px;
+        width: 100%;
+        position: fixed;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        color: white;
+    }
+
+    .logo-small {
+        height: 40px;
+    }
+
+    body {
+        margin: 0;
+    }
+</style>
+
+<script>
+    let currentOperation = null;
+
+    function appendNumber(number) {
+        const value1 = document.getElementById("value1");
+        const value2 = document.getElementById("value2");
+
+        if (!currentOperation) {
+            value1.value = value1.value === "0" ? number : value1.value + number;
+        } else {
+            value2.value = value2.value === "0" ? number : value2.value + number;
+        }
+    }
+
+    function setOperation(operation) {
+        const value1 = document.getElementById("value1");
+        if (!value1.value) {
+            alert("Please enter a value in Value 1 before selecting an operation.");
+            return;
+        }
+
+        currentOperation = operation;
+        document.getElementById("value2").focus();
+    }
+
+    function clearInputs() {
+        document.getElementById("value1").value = "";
+        document.getElementById("value2").value = "";
+        document.getElementById("result").innerText = "";
+        currentOperation = null;
+        document.getElementById("value1").focus();
+    }
+
+    function performOperation() {
+        const value1 = document.getElementById("value1").value;
+        const value2 = document.getElementById("value2").value;
+
+        if (!value1 || !value2 || !currentOperation) {
+            alert("Please enter valid numbers and select an operation!");
+            return;
+        }
+
+       c
+    }
+</script>

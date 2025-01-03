@@ -1,0 +1,138 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+
+<div class="header-bar fixed-top d-flex justify-content-between align-items-center p-2">
+    <img src="~/pictures/logo.png" alt="Logo" class="logo-small" />
+    <ul class="navbar-nav flex-row ms-3">
+        <li class="nav-item">
+            <a class="nav-link text-white ms-3" href="@Url.Action("Home", "Account")">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white ms-3" href="@Url.Action("Login", "Account")">Login</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white ms-3" href="@Url.Action("Register", "Account")">Register</a>
+        </li>
+    </ul>
+</div>
+
+
+<div class="container mt-5 pt-4">
+    <div class="text-center mb-4">
+        <h1 class="display-4">Welcome to Sharp OSA</h1>
+        <p class="lead">
+            Providing fast, flexible access to documents no matter where you are in the office.
+        </p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card shadow-lg h-100 zoom-card">
+                <img src="~/pictures/ui.png" class="card-img-top" alt="UI Customization">
+                <div class="card-body">
+                    <h5 class="card-title">UI Customization</h5>
+                    <p class="card-text">
+                        The server’s application enables dynamic adjustments to the MFP’s display based on user input or specific workflows.
+                    </p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="https://business.sharpusa.com/Document-Systems/Sharp-OSA" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card shadow-lg h-100 zoom-card">
+                <img src="~/pictures/job.png" class="card-img-top" alt="Job Control">
+                <div class="card-body">
+                    <h5 class="card-title">Job Control</h5>
+                    <p class="card-text">
+                        The server oversees print jobs and tasks (like scanning and copying), ensuring proper execution and processing.
+                    </p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="https://business.sharpusa.com/Document-Systems/Sharp-OSA" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card shadow-lg h-100 zoom-card">
+                <img src="~/pictures/acc.png" class="card-img-top" alt="Account Control">
+                <div class="card-body">
+                    <h5 class="card-title">Account Control</h5>
+                    <p class="card-text">
+                        The server manages user accounts and access, enabling authorization, usage tracking, permission settings, and remote management.
+                    </p>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="https://business.sharpusa.com/Document-Systems/Sharp-OSA" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+</div>
+
+
+<footer class="footer-bar fixed-bottom text-center p-2">
+    <div class="footer-bar fixed-bottom text-center bg-dark text-white p-2">
+        &copy; 2024 OSA Demo.
+    </div>
+</footer>
+
+
+<style>
+    .header-bar,
+    .footer-bar {
+        background-color: #000;
+        height: 60px;
+        width: 100%;
+        position: fixed;
+        z-index: 1000;
+        color: white;
+    }
+
+    .footer-bar {
+        bottom: -10px;
+        height: 75px;
+    }
+
+    .footer-text {
+        font-weight: bold;
+        bottom: -15px;
+       
+        /* Adjust font size if needed */
+    }
+
+    .logo-small {
+        height: 30px;
+        margin-left: 20px;
+    }
+
+    .container {
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+
+    /* Card Zoom Effect */
+    .zoom-card {
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .zoom-card:hover {
+            transform: scale(1.05);
+        }
+
+        .zoom-card:active {
+            transform: scale(1);
+        }
+</style>
+

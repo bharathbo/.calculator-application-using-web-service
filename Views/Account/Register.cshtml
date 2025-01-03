@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "Register";
+}
+
+
+<div class="header-bar fixed-top d-flex justify-content-between align-items-center bg-dark text-white">
+    <img src="~/pictures/logo.png" alt="Logo" class="logo-small" />
+    <ul class="navbar-nav flex-row ms-3">
+        <li class="nav-item">
+            <a class="nav-link text-white ms-3" href="@Url.Action("Home", "Account")">Home</a>
+        </li>
+    </ul>
+</div>
+
+
+<div class="d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 120px); margin-top: 60px; margin-bottom: 60px;">
+    <div class="card p-4" style="width: 400px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <h2 class="text-center">Register</h2>
+        <form method="post">
+            <div class="mb-3 text-start">
+                <label class="form-label">Username:</label>
+                <div class="d-flex justify-content-center">
+                    <input type="text" name="username" class="form-control" style="height: 45px; width: 100%;" required />
+                </div>
+            </div>
+            <div class="mb-3 text-start">
+                <label class="form-label">Password:</label>
+                <div class="d-flex justify-content-center">
+                    <input type="password" name="password" class="form-control" style="height: 45px; width: 100%;" required />
+                </div>
+            </div>
+            <div class="mb-3 text-start">
+                <label class="form-label">Confirm Password:</label>
+                <div class="d-flex justify-content-center">
+                    <input type="password" name="confirmPassword" class="form-control" style="height: 45px; width: 100%;" required />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Register</button>
+            <div class="text-center mt-3">
+                <a href="@Url.Action("Login", "Account")">Already have an account? Login here</a>
+            </div>
+        </form>
+        <p class="text-danger mt-3">@ViewBag.Message</p>
+    </div>
+</div>
+
+
+<div class="footer-bar fixed-bottom d-flex justify-content-center align-items-center bg-dark text-white">
+    <p>&copy; 2024 OSA Demo.</p>
+</div>
+
+
+<style>
+    .header-bar, .footer-bar {
+        background-color: #000;
+        height: 60px;
+        width: 100%;
+        position: fixed;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        color: white;
+    }
+
+    .logo-small {
+        height: 40px;
+    }
+
+    body {
+        margin: 0;
+    }
+
+    .form-control {
+        font-size: 16px;
+    }
+
+    .card {
+        text-align: left;
+    }
+</style>
